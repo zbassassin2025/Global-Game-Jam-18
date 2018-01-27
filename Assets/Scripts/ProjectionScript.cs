@@ -9,9 +9,11 @@ public class ProjectionScript : MonoBehaviour {
     public float _virusDistance;
     public float _destroyTime;
 
+    private Vector2 _directionAtInstantiate;
+
 	// Use this for initialization
 	void Start () {
-		
+        _directionAtInstantiate = GetDirectionByKey();
 	}
 	
 	// Update is called once per frame
@@ -20,7 +22,7 @@ public class ProjectionScript : MonoBehaviour {
 
         if(virus == null)
         {
-            transform.Translate(Vector2.up * Time.deltaTime * _movementSpeed);
+            transform.Translate(_directionAtInstantiate * Time.deltaTime * _movementSpeed);
         }
         else
         {
@@ -52,9 +54,36 @@ public class ProjectionScript : MonoBehaviour {
             Destroy(collision.gameObject, _destroyTime);
 
             // JA: Contract: Implement a function that destroys the object with animation
-            Destroy(this, _destroyTime);
-            this.gameObject.SetActive(false);
+            DestroyAntiBody();
 
         }
+    }
+
+    private Vector2 GetDirectionByKey()
+    {
+       if(Input.GetAxisRaw("Horizontal") < 0.0f)
+        {
+            return Vector2.left;
+        }
+        if (Input.GetAxisRaw("Horizontal") > 0.0f)
+        {
+            return Vector2.right;
+        }
+        if (Input.GetAxisRaw("Vertical") < 0.0f)
+        {
+            return Vector2.down;
+        }
+        if (Input.GetAxisRaw("Horizontal") > 0.0f)
+        {
+            return Vector2.up;
+        }
+
+        return Vector2.up;
+    }
+
+    private void DestroyAntiBody()
+    {
+        Destroy(this, _destroyTime);
+        this.gameObject.SetActive(false);
     }
 }
