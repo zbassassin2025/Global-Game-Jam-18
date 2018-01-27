@@ -163,6 +163,22 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114991482699327678, guid: 0df0f04f4b9444adeb187858136c9ca8,
+        type: 2}
+      propertyPath: _antibodyPrefab
+      value: 
+      objectReference: {fileID: 1367684207488432, guid: ef8a592d0ad75474ea85e9d4868eb1a9,
+        type: 2}
+    - target: {fileID: 114991482699327678, guid: 0df0f04f4b9444adeb187858136c9ca8,
+        type: 2}
+      propertyPath: _maxAntibody
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114991482699327678, guid: 0df0f04f4b9444adeb187858136c9ca8,
+        type: 2}
+      propertyPath: _maxCooldown
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114705058337173208, guid: 0df0f04f4b9444adeb187858136c9ca8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0df0f04f4b9444adeb187858136c9ca8, type: 2}
