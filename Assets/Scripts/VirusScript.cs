@@ -8,85 +8,44 @@ using UnityEngine;
 
 public class VirusScript : MonoBehaviour
 {
-    [SerializeField]
-    private float virusSpeed;
-    public Transform virusPosition;
-    public GameObject virusGameObject;
-    public Transform playerPos;
-    public GameObject target;
+    public float virusSpeed = 0;
 
-    private bool targetinRange = false;
+    public GameObject virus;
+    public GameObject player;
 
-    public float range = 5;
+    public int bloodCells = 1;
 
-    public VirusID vID = VirusID.VirusAttack;
-
-    private void Awake()
+    void OnTriggerEnter(Collider col)
     {
-        playerPos = FindObjectOfType<Transform>();
-        target = FindObjectOfType<GameObject>();
-        range = 5;
-    }
-
-    private void Start()
-    {
-        virusPosition = transform;
-        virusGameObject.transform.position = virusPosition.position;
-    }
-
-    public enum VirusID
-    {
-        VirusAttack, 
-        VirusMultiply,
-        VirusDead
-    }
-
-    private void Update()
-    {
-        StartCoroutine(VirusAttack());
-    }
-
-    public IEnumerator VirusAttack()
-    {
-        yield return new WaitForSeconds(5f);
-
-        float distance = Vector3.Distance(virusPosition.position, playerPos.position);
-
-        if (vID == VirusID.VirusAttack)
+        if(col.tag == "Player")
         {
-           if(distance < 5)
-            {
-                targetinRange = true;
-            }
-         
-            if(targetinRange == true)
-            {
-                Debug.Log("enemy is close");
-                virusPosition.LookAt(playerPos);
-                Vector3 moveVirus = virusPosition.position;
-                //  moveVirus.x = range;
-            }
-
-            Vector3 area = virusGameObject.transform.position - target.transform.position.normalized;
-            float moveSpeed = virusSpeed * Time.deltaTime;
-            virusGameObject.transform.position = target.transform.position + (area * moveSpeed);
-            transform.LookAt(target.transform);
+            Debug.Log("Found Player");
+            GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
         }
-        else
+    }
+
+    void OnTriggerStay(Collider col) // chasing
+    {
+        if (col.tag == "Player")
         {
-            Debug.Log("not close yet " + distance);
+            Debug.Log("Found Player");
+            GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
         }
 
-        yield return new WaitForSeconds(1.0f);
+        if(col.tag == "Bloodcell")
+        {
+            GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
+        }
     }
 
-    public IEnumerator VirusMultiply()
+    void OnCollisionEnter(Collision col) // destroy
     {
-        yield return null;
-    }
-
-    public IEnumerator VirusDead()
-    {
-        yield return null;
+        if (col.transform.tag == "Bloodcell")
+        {
+            Destroy(col.gameObject);
+        }
     }
 }

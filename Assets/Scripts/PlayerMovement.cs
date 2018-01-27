@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		float moveHorizontal = Input.GetAxis("Horizontal"); 
 		float moveVertical = Input.GetAxis("Vertical");
-		Debug.Log("v: " + moveVertical + " h: " + moveHorizontal);
+		//Debug.Log("v: " + moveVertical + " h: " + moveHorizontal);
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
 

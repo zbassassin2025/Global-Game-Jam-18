@@ -276,7 +276,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!135 &1414782314
 SphereCollider:
@@ -289,6 +289,18 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &1414782315
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414782312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1841728985
 GameObject:
@@ -394,6 +406,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 135038054144792968, guid: 0df0f04f4b9444adeb187858136c9ca8,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54922326581091442, guid: 0df0f04f4b9444adeb187858136c9ca8,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0df0f04f4b9444adeb187858136c9ca8, type: 2}
   m_IsPrefabParent: 0
@@ -457,6 +479,21 @@ Prefab:
     - target: {fileID: 4490801904253598, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 10.231001
+      objectReference: {fileID: 0}
+    - target: {fileID: 114636969342758024, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
+        type: 2}
+      propertyPath: virus
+      value: 
+      objectReference: {fileID: 1414782312}
+    - target: {fileID: 114636969342758024, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1155446075}
+    - target: {fileID: 114636969342758024, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
+        type: 2}
+      propertyPath: virusSpeed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50268079413635560, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
