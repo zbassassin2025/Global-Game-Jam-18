@@ -7,6 +7,7 @@ public class ProjectionScript : MonoBehaviour {
 
     public float _movementSpeed;
     public float _virusDistance;
+    public float _destroyTime;
 
 	// Use this for initialization
 	void Start () {
@@ -36,5 +37,24 @@ public class ProjectionScript : MonoBehaviour {
 
         }
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("collided against: " + collision.gameObject.name);
+        if(collision.collider.tag == "Virus")
+        {
+            //Kill virus, destroy projectile
+            collision.gameObject.SetActive(false);
+
+            // JA: Contract : Once Virus has a DestroyUponContact function, replace
+            // this with the Virus's Destory function
+            Destroy(collision.gameObject, _destroyTime);
+
+            // JA: Contract: Implement a function that destroys the object with animation
+            Destroy(this, _destroyTime);
+            this.gameObject.SetActive(false);
+
+        }
     }
 }
