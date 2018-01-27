@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour {
 	public bool active_position_check = false;
     public GameObject _antibodyPrefab;
     public int _maxAntibody;
-    public float _maxCooldown;
 
     private float _coolDown = 0.0f;
 
@@ -77,7 +76,7 @@ public class PlayerMovement : MonoBehaviour {
     private void ReleaseAntiBody()
     {
         
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && ContainsButtonPresses())
         {
             //Shoot antibodies
             var antibody = Instantiate(_antibodyPrefab, transform.position, transform.rotation) as GameObject;
@@ -95,5 +94,10 @@ public class PlayerMovement : MonoBehaviour {
             }
 
         }
+    }
+
+    private bool ContainsButtonPresses()
+    {
+        return Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f;
     }
 }
