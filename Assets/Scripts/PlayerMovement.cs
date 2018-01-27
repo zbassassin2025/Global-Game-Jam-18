@@ -10,17 +10,27 @@ public class PlayerMovement : MonoBehaviour {
 	public float min_x;
 	public float min_y;
 	public bool active_position_check = false;
+    public GameObject _antibodyPrefab;
+    public int _maxAntibody;
+    public float _maxCooldown;
+
+    private float _coolDown = 0.0f;
+
+    private Queue<GameObject> _antibodyQueue;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        _antibodyQueue = new Queue<GameObject>();
 	}
 		
 	void Update(){
-		//checks for player position
+        //checks for player position
 
 
-		//making sure player position isnt out of bound
+        //making sure player position isnt out of bound
+
+        ReleaseAntiBody();
 
 
 	}
@@ -30,7 +40,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		float moveHorizontal = Input.GetAxis("Horizontal"); 
 		float moveVertical = Input.GetAxis("Vertical");
-		Debug.Log("v: " + moveVertical + " h: " + moveHorizontal);
+		//Debug.Log("v: " + moveVertical + " h: " + moveHorizontal);
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
 
@@ -63,4 +73,27 @@ public class PlayerMovement : MonoBehaviour {
 
 		rb.AddForce(movement * speed);
 	}
+
+    private void ReleaseAntiBody()
+    {
+        
+        if (Input.GetKeyDown("space"))
+        {
+            //Shoot antibodies
+            var antibody = Instantiate(_antibodyPrefab, transform.position, transform.rotation) as GameObject;
+            antibody.AddComponent<BoxCollider>().isTrigger = true;
+
+
+            _antibodyQueue.Enqueue(antibody);
+
+            if(_antibodyQueue.Count > _maxAntibody)
+            {
+                Debug.Log("deleting antibody...");
+                var removedAntibody = _antibodyQueue.Dequeue();
+                removedAntibody.SetActive(false);
+                Destroy(removedAntibody);
+            }
+
+        }
+    }
 }
