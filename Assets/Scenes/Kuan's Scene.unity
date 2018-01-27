@@ -229,6 +229,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 382732279}
+--- !u!1001 &434608083
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &442735979
 Prefab:
   m_ObjectHideFlags: 0
@@ -538,6 +580,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a0f37afaddd42639f628e070ae1c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: []
+  virus: []
+  player: {fileID: 0}
+  gameManager: {fileID: 0}
+  score: 0
+  hp: {fileID: 1809910525}
+  bc: {fileID: 2026408184}
+  vc: {fileID: 607622437}
+  sc: {fileID: 382732281}
+  blood_count: 0
+  virus_count: 0
 --- !u!114 &1586785047
 MonoBehaviour:
   m_ObjectHideFlags: 0
