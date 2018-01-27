@@ -10,10 +10,10 @@ public class VirusScript : MonoBehaviour
 {
     [SerializeField]
     private float virusSpeed;
-    private Transform virusPosition;
-    private GameObject virusGameObject;
-    private Transform playerPos;
-    private GameObject target;
+    public Transform virusPosition;
+    public GameObject virusGameObject;
+    public Transform playerPos;
+    public GameObject target;
 
     public float range = 5;
 
@@ -30,7 +30,6 @@ public class VirusScript : MonoBehaviour
     {
         virusPosition = transform;
         virusGameObject.transform.position = virusPosition.position;
-        StartCoroutine(VirusAttack());
     }
 
     public enum VirusID
@@ -46,7 +45,7 @@ public class VirusScript : MonoBehaviour
 
         if (vID == VirusID.VirusAttack)
         {
-            if (Vector3.Distance(virusPosition.position, playerPos.position) < range)
+            if (Vector3.Distance(virusPosition.position, playerPos.position) <= range)
             {
                 virusPosition.LookAt(playerPos);
                 Vector3 moveVirus = virusPosition.position;
@@ -54,11 +53,6 @@ public class VirusScript : MonoBehaviour
             }
 
             Vector3.MoveTowards(virusGameObject.transform.position, target.transform.position, range);
-        }
-
-        else
-        {
-            yield return null;
         }
     }
 
