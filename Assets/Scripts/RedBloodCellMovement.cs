@@ -5,11 +5,13 @@ using UnityEngine;
 public class RedBloodCellMovement : MonoBehaviour {
     //Every 30 frames, updates vector to change slightly
     //Every 200 frames, update vector to change in a large angle
-    public int[] angles = {30, 45, 90, 180};
-    private Rigidbody2D redCell;
+    public float[] angles = {45f, -45f, -90f, -180f, 90f, 180f};
+    private Rigidbody redCell;
     Vector2 startingPosition;
     float randomX;
     float randomY;
+    //float largeX;
+    //float largeY;
     public float speed = 6f;
 
 
@@ -18,10 +20,8 @@ public class RedBloodCellMovement : MonoBehaviour {
     {
         randomX = Random.Range(-1.0f, 1.0f);
         randomY = Random.Range(-1.0f, 1.0f);
-        Debug.Log(Time.deltaTime);
         startingPosition = new Vector2(randomX, randomY);
 
-        Debug.Log(startingPosition);
         if (-1.0f <= randomX && randomX <= 1.0f)
         {
             randomX += Random.Range(-0.3f, 0.3f);
@@ -34,13 +34,20 @@ public class RedBloodCellMovement : MonoBehaviour {
     }
 
     void LargeMovement()
+    // Changes angle by random angle from list
     {
-
+        int index = Mathf.FloorToInt(Random.Range(0, angles.Length));
+        Debug.Log(index);
+        //startingPosition.Set(Mathf.Cos(angles[index]), Mathf.Sin(angles[index]));
+        //transform.rotation = Quaternion.Euler(Mathf.Cos(angles[index]), Mathf.Sin(angles[index]), 0);
+        redCell.AddForce(Vector2.zero);
+        redCell.rotation = Quaternion.Euler(Mathf.Cos(angles[index]), Mathf.Sin(angles[index]), 0);
+        //startingPosition.Set(randomX*Mathf.Cos(angles[index]), randomY*Mathf.Sin(angles[index]));
     }
 
     // Use this for initialization
     void Start () {
-        redCell = GetComponent<Rigidbody2D>();
+        redCell = GetComponent<Rigidbody>();
 
     }
 
@@ -50,8 +57,12 @@ public class RedBloodCellMovement : MonoBehaviour {
         {
             WobbleObject();
         }
-        if (Time.frameCount % 200 == 0) ;
+        if (Time.frameCount % 120 == 0)
+        {
+            LargeMovement();
+            Debug.Log(startingPosition);
+        }
         redCell.AddForce(startingPosition * speed);
-
+        
     }
 }
