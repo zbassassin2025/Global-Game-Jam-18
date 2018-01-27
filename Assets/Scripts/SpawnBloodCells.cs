@@ -6,10 +6,8 @@ public class SpawnBloodCells : MonoBehaviour {
     public GameObject redCell;
     public float spawnTime = 0f;
 
-	// Use this for initialization
 	void Start ()
     {
-       // InvokeRepeating("Spawn", spawnTime, spawnTime);
         spawnTime = 0;
         StartCoroutine("SpawnTimer");
     }
@@ -17,11 +15,6 @@ public class SpawnBloodCells : MonoBehaviour {
     private void Update()
     {
         spawnTime += Time.time;
-    }
-
-    private void LateUpdate()
-    {
-        StartCoroutine("SpawnTimer");
     }
 
     /*void Update()
@@ -65,13 +58,11 @@ public class SpawnBloodCells : MonoBehaviour {
             {
                 Debug.Log("Added cell");
                 Instantiate(redCell, transform.position, transform.rotation);
-                yield break;
-
             }
-        }
-      
 
-        spawnTime = 0;
+            spawnTime = 0;
+            yield break;
+        }
 
         yield return new WaitForSeconds(1.0f);
 	}
