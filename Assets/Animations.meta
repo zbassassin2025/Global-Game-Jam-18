@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Animations.meta
 guid: baeab1ec3d40ded41a1010d0a69e58ed
 folderAsset: yes
 timeCreated: 1517080477
 licenseType: Free
+=======
+guid: d80e5b8b129516943856e1b7cc445a09
+folderAsset: yes
+timeCreated: 1517080707
+licenseType: Pro
+>>>>>>> 01b6ea619085d13a1b65c64073f3a8f82e3f4480:Assets/Materials.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
