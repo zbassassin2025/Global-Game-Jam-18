@@ -5,7 +5,7 @@ using UnityEngine;
 public class RedBloodCellMovement : MonoBehaviour {
     //Every 30 frames, updates vector to change slightly
     //Every 200 frames, update vector to change in a large angle
-    public float[] angles = {-90f, -180f, 90f, 180f};
+    public float[] angles = {45f, -45f, -90f, -180f, 90f, 180f};
     private Rigidbody redCell;
     Vector2 startingPosition;
     float randomX;

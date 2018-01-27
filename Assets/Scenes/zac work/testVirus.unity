@@ -493,7 +493,7 @@ Prefab:
     - target: {fileID: 114636969342758024, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
         type: 2}
       propertyPath: virusSpeed
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50268079413635560, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}

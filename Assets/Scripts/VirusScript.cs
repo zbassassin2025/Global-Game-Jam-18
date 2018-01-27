@@ -19,7 +19,6 @@ public class VirusScript : MonoBehaviour
     {
         if(col.tag == "Player")
         {
-            Debug.Log("Found Player");
             GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
         }
@@ -29,12 +28,11 @@ public class VirusScript : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            Debug.Log("Found Player");
             GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
         }
 
-        if(col.tag == "Bloodcell")
+        if(col.tag == "Blood")
         {
             GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
@@ -43,7 +41,7 @@ public class VirusScript : MonoBehaviour
 
     void OnCollisionEnter(Collision col) // destroy
     {
-        if (col.transform.tag == "Bloodcell")
+        if (col.transform.tag == "Blood")
         {
             Destroy(col.gameObject);
         }
