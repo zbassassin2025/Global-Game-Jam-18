@@ -8,67 +8,42 @@ using UnityEngine;
 
 public class VirusScript : MonoBehaviour
 {
-    [SerializeField]
-    private float virusSpeed;
-    private Transform virusPosition;
-    private GameObject virusGameObject;
-    private Transform playerPos;
-    private GameObject target;
+    public float virusSpeed = 0;
 
-    public float range = 5;
+    public GameObject virus;
+    public GameObject player;
 
-    public VirusID vID = VirusID.VirusAttack;
+    public int bloodCells = 1;
 
-    private void Awake()
+    void OnTriggerEnter(Collider col)
     {
-        playerPos = FindObjectOfType<Transform>();
-        target = FindObjectOfType<GameObject>();
-        range = 5;
-    }
-
-    private void Start()
-    {
-        virusPosition = transform;
-        virusGameObject.transform.position = virusPosition.position;
-        StartCoroutine(VirusAttack());
-    }
-
-    public enum VirusID
-    {
-        VirusAttack, 
-        VirusMultiply,
-        VirusDead
-    }
-
-    public IEnumerator VirusAttack()
-    {
-        yield return new WaitForSeconds(5f);
-
-        if (vID == VirusID.VirusAttack)
+        if(col.tag == "Player")
         {
-            if (Vector3.Distance(virusPosition.position, playerPos.position) < range)
-            {
-                virusPosition.LookAt(playerPos);
-                Vector3 moveVirus = virusPosition.position;
-                moveVirus.x = range;
-            }
-
-            Vector3.MoveTowards(virusGameObject.transform.position, target.transform.position, range);
-        }
-
-        else
-        {
-            yield return null;
+            GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
         }
     }
 
-    public IEnumerator VirusMultiply()
+    void OnTriggerStay(Collider col) // chasing
     {
-        yield return null;
+        if (col.tag == "Player")
+        {
+            GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
+        }
+
+        if(col.tag == "Blood")
+        {
+            GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
+        }
     }
 
-    public IEnumerator VirusDead()
+    void OnCollisionEnter(Collision col) // destroy
     {
-        yield return null;
+        if (col.transform.tag == "Blood")
+        {
+            Destroy(col.gameObject);
+        }
     }
 }
