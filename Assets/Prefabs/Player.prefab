@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 54922326581091442}
   - component: {fileID: 135038054144792968}
   - component: {fileID: 114111468222451712}
-  - component: {fileID: 114705058337173208}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -69,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1541859430731776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.4, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 4450206541298384}
@@ -120,21 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
---- !u!114 &114705058337173208
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1541859430731776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b828eb160d4144a7cb542412a39ec6a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cd: 0
-  cdtimer: 0.5
-  bullet: {fileID: 0}
-  bulletobj: {fileID: 0}
 --- !u!114 &114991482699327678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +136,9 @@ MonoBehaviour:
   min_x: -100
   min_y: -100
   active_position_check: 0
+  _antibodyPrefab: {fileID: 1367684207488432, guid: 85bc8fb4a25a3584c8ca4a682b5b18b9,
+    type: 2}
+  _maxAntibody: 50
 --- !u!135 &135038054144792968
 SphereCollider:
   m_ObjectHideFlags: 1

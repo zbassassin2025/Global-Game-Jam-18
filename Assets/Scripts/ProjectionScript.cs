@@ -8,18 +8,35 @@ public class ProjectionScript : MonoBehaviour {
     public float _movementSpeed;
     public float _virusDistance;
     public float _destroyTime;
+    public float _lifeTime;
 
     private Vector2 _directionAtInstantiate;
+    private float _currentTime;
 
 	// Use this for initialization
 	void Start () {
+        _currentTime = 0.0f;
+        if(_lifeTime == 0)
+        {
+            _lifeTime = 5.0f;
+        }
         _directionAtInstantiate = GetDirectionByKey();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        GameObject virus = GameObject.FindWithTag("Virus");
+        _currentTime += Time.deltaTime;
 
+        if(_currentTime > _lifeTime)
+        {
+            this.gameObject.SetActive(false);
+            Destroy(this);
+            return;
+        }
+
+        GameObject virus = GameObject.FindWithTag("Virus");
+		transform.Translate(_directionAtInstantiate * Time.deltaTime * _movementSpeed);
+		/*
         if(virus == null)
         {
             transform.Translate(_directionAtInstantiate * Time.deltaTime * _movementSpeed);
@@ -38,14 +55,15 @@ public class ProjectionScript : MonoBehaviour {
             }
 
         }
-
+		*/
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collided against: " + collision.gameObject.name);
-        if(collision.collider.tag == "Virus")
+        if(collision.transform.tag == "Virus")
         {
+			Debug.Log("Collide");
             //Kill virus, destroy projectile
             collision.gameObject.SetActive(false);
 
@@ -59,7 +77,7 @@ public class ProjectionScript : MonoBehaviour {
         }
     }
 
-    private Vector2 GetDirectionByKey()
+    static public Vector2 GetDirectionByKey()
     {
         //Up-Left
         if (Input.GetAxisRaw("Vertical") > 0.0f && Input.GetAxisRaw("Horizontal") < 0.0f)
