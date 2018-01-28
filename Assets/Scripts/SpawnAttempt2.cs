@@ -48,9 +48,9 @@ public class SpawnAttempt2 : MonoBehaviour
                     continue;
                 }
 
+                Instantiate(redCells[0].gameObject, transform.position, transform.rotation);
                 Instantiate(redCells[1].gameObject, transform.position, transform.rotation);
                 Instantiate(redCells[2].gameObject, transform.position, transform.rotation);
-                Instantiate(redCells[3].gameObject, transform.position, transform.rotation);
             }
             yield return null;
         }
