@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145136535468374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.72, y: 0, z: 0}
+  m_LocalPosition: {x: 3.653, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,12 +74,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virusSpeed: 4
-  virusPosition: {fileID: 4490801904253598}
-  virusGameObject: {fileID: 1145136535468374}
-  playerPos: {fileID: 0}
-  target: {fileID: 0}
-  range: 5
-  vID: 0
+  virus: {fileID: 1145136535468374}
+  player: {fileID: 0}
+  bloodCells: 1
 --- !u!212 &212346500706745472
 SpriteRenderer:
   m_ObjectHideFlags: 1
