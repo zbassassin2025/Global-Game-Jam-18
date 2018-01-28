@@ -15,6 +15,7 @@ public class UI_Script : MonoBehaviour {
 	public Text vc;
 	public Text sc;
 	public GameObject pause_canvas;
+	public GameObject gameover_canvas;
 	public int blood_count;
 	public int virus_count;
 	private float cooldown;
@@ -24,6 +25,7 @@ public class UI_Script : MonoBehaviour {
 		Time.timeScale = 1;
 		player = GameObject.FindGameObjectWithTag("Player");
 		pause_canvas.SetActive(false);
+		gameover_canvas.SetActive(false);
 	}
 
 
@@ -42,6 +44,20 @@ public class UI_Script : MonoBehaviour {
 		blood = GameObject.FindGameObjectsWithTag("Blood");
 		blood_count = blood.Length;
 		virus_count = virus.Length;
+
+		if(blood_count == 0){
+
+			Time.timeScale = 0;
+			gameover_canvas.SetActive(true);
+
+		}
+
+		if(virus_count == 0){
+			Time.timeScale = 0;
+			//win_canvas.SetActive(true);
+
+		}
+
 
 		if(Input.GetKeyDown(KeyCode.Escape)){
 			if(Time.timeScale == 1){
