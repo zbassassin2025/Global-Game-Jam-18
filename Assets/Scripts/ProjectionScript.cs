@@ -42,7 +42,7 @@ public class ProjectionScript : MonoBehaviour {
 		*/
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collided against: " + collision.gameObject.name);
         if(collision.transform.tag == "Virus")
@@ -61,7 +61,7 @@ public class ProjectionScript : MonoBehaviour {
         }
     }
 
-    private Vector2 GetDirectionByKey()
+    static public Vector2 GetDirectionByKey()
     {
         //Up-Left
         if (Input.GetAxisRaw("Vertical") > 0.0f && Input.GetAxisRaw("Horizontal") < 0.0f)
