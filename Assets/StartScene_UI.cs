@@ -15,9 +15,14 @@ public class StartScene_UI : MonoBehaviour {
 		
 	}
 
-	public void StartScene(){
+	public void LoadStart(){
 
-		SceneManager.LoadScene("Game Stage 1");
+		SceneManager.LoadScene("Start Scene");
+	}
+
+	public void GameScene(){
+
+		SceneManager.LoadScene("Kuan's Scene");
 	}
 
 	public void ControlScene(){
@@ -28,6 +33,16 @@ public class StartScene_UI : MonoBehaviour {
 	public void CreditsScene(){
 		SceneManager.LoadScene("Credits");
 
+	}
+
+	public void QUit(){
+
+		SceneManager.LoadScene("Start Scene");
+	}
+
+	public void Restart(){
+
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
 

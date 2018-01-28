@@ -14,13 +14,16 @@ public class UI_Script : MonoBehaviour {
 	public Text bc;
 	public Text vc;
 	public Text sc;
+	public GameObject pause_canvas;
 	public int blood_count;
 	public int virus_count;
+	private float cooldown;
+	private float cooldowntime = 1f;
 
 	void Awake(){
-
+		Time.timeScale = 1;
 		player = GameObject.FindGameObjectWithTag("Player");
-
+		pause_canvas.SetActive(false);
 	}
 
 
@@ -35,6 +38,18 @@ public class UI_Script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			if(Time.timeScale == 1){
+				Time.timeScale = 0;
+				pause_canvas.SetActive(true);
+
+			}else if (Time.timeScale == 0){
+				Time.timeScale = 1;
+				pause_canvas.SetActive(false);
+
+			}
+
+		}
 
 	}
 

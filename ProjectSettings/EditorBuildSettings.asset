@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/Start Scene.unity
+    guid: 654250e5b2db64059ba434a831a9bfdf
+  - enabled: 1
+    path: Assets/Scenes/Kuan's Scene.unity
+    guid: 44846bc1d7835424ebf54ae02473c8ca
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/Credits.unity
+    guid: 3764c3f957884488f91f62b7c2218429
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/Controls.unity
+    guid: ae0db8f8012d547f0962eded0e3baa5b
