@@ -15,56 +15,37 @@ public class SpawnBloodCells : MonoBehaviour
     void Start ()
     {
         spawnTime = 0;
-        spawnCount = 10;
-        StartCoroutine("SpawnTimer");
+        spawnCount = 0;
     }
 
     private void Update()
     {
         spawnTime += Time.time;
-
-        while(redCell != null)
-        {
-            spawnCount += 1;
-            StartCoroutine(SpawnTimer());
-            if(spawnCount >= 10)
-            {
-                break;
-            }
-            else
-            {
-                StopCoroutine(SpawnTimer());
-            }
-        }
-    }
-
-    private IEnumerator SpawnTimer()
-    {
-        yield return new WaitForSeconds(3.0f);
         Debug.Log(spawnTime);
 
-        if (spawnTime >= 3)
+        for(int i = 0; i < spawnCount; i++)
         {
-            yield return new WaitForSeconds(5.0f);
-            StartCoroutine("Spawn");
-            yield return new WaitForSeconds(5.0f);
+            spawnCount++;
+            StartCoroutine(Spawn());
+        }
+
+        if(spawnCount >= 10)
+        {
+            StopCoroutine(Spawn());
         }
     }
 
    private IEnumerator Spawn()
     {
-        StopCoroutine("Spawn");
-        while(true)
-        {
-            if (spawnTime >= 3)
-            {
-                Debug.Log("Added cell");
-                Instantiate(redCell, transform.position, transform.rotation);
-            }
+        yield return new WaitForSeconds(3.0f);
 
-            spawnTime = 0;
-            yield break;
+        if (spawnTime >= 3)
+        {
+            Debug.Log("Added cell");
+            Instantiate(redCell, transform.position, transform.rotation);
         }
+
+        spawnTime = 0;
 
         yield return new WaitForSeconds(1.0f);
 	}
