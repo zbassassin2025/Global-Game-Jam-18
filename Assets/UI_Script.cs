@@ -55,13 +55,8 @@ public class UI_Script : MonoBehaviour {
 			blood_count = 0;
 			Time.timeScale = 0;
 
+			gameover_canvas.SetActive(true);
 
-			if(debugmode = true){
-				Time.timeScale = 1;
-			}
-			else{
-				gameover_canvas.SetActive(true);
-			}
 		}
 
 		if(virus_count == 0 && start != true){
