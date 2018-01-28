@@ -9,35 +9,29 @@ public class ProjectionScript : MonoBehaviour {
     public float _virusDistance;
     public float _destroyTime;
     public float _lifeTime;
-	public bool antibodyBeingDestroyed;
 
     private Vector2 _directionAtInstantiate;
     private float _currentTime;
-
-	private Animator anim;
 
 	// Use this for initialization
 	void Start () {
         _currentTime = 0.0f;
         if(_lifeTime == 0)
         {
-            _lifeTime = 3.0f;
+            _lifeTime = 5.0f;
         }
         _directionAtInstantiate = GetDirectionByKey();
-
-		antibodyBeingDestroyed = false;
-		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         _currentTime += Time.deltaTime;
 
-		if ((_currentTime > _lifeTime) && (!antibodyBeingDestroyed))
+        if(_currentTime > _lifeTime)
         {
-			antibodyBeingDestroyed = true;
-			anim.SetTrigger ("antibodyDestroy");
-			return;
+            this.gameObject.SetActive(false);
+            Destroy(this);
+            return;
         }
 
         GameObject virus = GameObject.FindWithTag("Virus");
@@ -141,8 +135,7 @@ public class ProjectionScript : MonoBehaviour {
 
     private void DestroyAntiBody()
     {
-		Debug.Log ("antibody being destroyed!");
-        Destroy(this.gameObject);
-        // this.gameObject.SetActive(false);
+        Destroy(this, _destroyTime);
+        this.gameObject.SetActive(false);
     }
 }

@@ -19,10 +19,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4417588313343684}
-  - component: {fileID: 212096909670367498}
   - component: {fileID: 114773917625084504}
+<<<<<<< HEAD
   - component: {fileID: 95365071867730180}
   - component: {fileID: 54199615255647408}
+=======
+  - component: {fileID: 212096909670367498}
+>>>>>>> 1f00050e7f712d9568c39d3a56b5d6eb9eeee719
   m_Layer: 0
   m_Name: BulletPrefab
   m_TagString: Untagged
@@ -37,12 +40,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1367684207488432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!54 &54199615255647408
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -75,6 +79,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+=======
+>>>>>>> 1f00050e7f712d9568c39d3a56b5d6eb9eeee719
 --- !u!114 &114773917625084504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,11 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817daec70fd8b394e8e9fd37816332c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 25
+  _movementSpeed: 10
   _virusDistance: 5
-  _destroyTime: 2
+  _destroyTime: 5
   _lifeTime: 0
-  antibodyBeingDestroyed: 0
 --- !u!212 &212096909670367498
 SpriteRenderer:
   m_ObjectHideFlags: 1

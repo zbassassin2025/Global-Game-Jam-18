@@ -104,6 +104,7 @@ public class PlayerMovement : MonoBehaviour {
             {
                 Debug.Log("deleting antibody...");
                 var removedAntibody = _antibodyQueue.Dequeue();
+                removedAntibody.SetActive(false);
                 Destroy(removedAntibody);
             }
 

@@ -115,5 +115,16 @@ public class VirusScript : MonoBehaviour
         }
     }
 
+	IEnumerator virus_animation(){
+
+		//anim.Play("BateriophageInfection");
+		//float delay = 10f;
+		anim.SetTrigger("bacteriophageInfection");
+		//Debug.Log("time: " + anim.GetCurrentAnimatorStateInfo(0).length + delay); 
+		//Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length + delay); 
+	
+		yield return null;
+	}
+
 
 }
