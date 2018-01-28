@@ -492,7 +492,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4548355837736754, guid: 5697e03ef8a154b358752b4bcb0cedb3, type: 2}
       propertyPath: m_LocalScale.y
-      value: 24.568264
+      value: 23.521334
       objectReference: {fileID: 0}
     - target: {fileID: 4133407368496606, guid: 5697e03ef8a154b358752b4bcb0cedb3, type: 2}
       propertyPath: m_LocalScale.y
@@ -1096,7 +1096,7 @@ Prefab:
     - target: {fileID: 114491262463428190, guid: 0af749c4511dd47a7b6820a585708455,
         type: 2}
       propertyPath: number_to_spawn
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114491262463428190, guid: 0af749c4511dd47a7b6820a585708455,
         type: 2}
