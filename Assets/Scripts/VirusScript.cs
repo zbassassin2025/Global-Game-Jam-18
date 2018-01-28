@@ -35,7 +35,7 @@ public class VirusScript : MonoBehaviour
 		if (Time.frameCount % 120 == 0)
 		{
 			LargeMovement();
-			Debug.Log(startingPosition);
+			//Debug.Log(startingPosition);
 		}
 		GetComponent<Rigidbody>().AddForce(startingPosition * speed);
 
@@ -61,7 +61,7 @@ public class VirusScript : MonoBehaviour
 	// Changes angle by random angle from list
 	{
 		int index = Mathf.FloorToInt(Random.Range(0, angles.Length));
-		Debug.Log(index);
+		//Debug.Log(index);
 		//startingPosition.Set(Mathf.Cos(angles[index]), Mathf.Sin(angles[index]));
 		//transform.rotation = Quaternion.Euler(Mathf.Cos(angles[index]), Mathf.Sin(angles[index]), 0);
 		GetComponent<Rigidbody>().AddForce(Vector2.zero);
@@ -120,10 +120,6 @@ public class VirusScript : MonoBehaviour
 		//Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length + delay); 
 	
 		yield return null;
-	}
-
-	public void DestroyByAntibodyContact () {
-		anim.SetTrigger ("bacteriophageDestroy");
 	}
 
 
