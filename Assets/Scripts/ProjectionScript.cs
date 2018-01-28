@@ -8,16 +8,32 @@ public class ProjectionScript : MonoBehaviour {
     public float _movementSpeed;
     public float _virusDistance;
     public float _destroyTime;
+    public float _lifeTime;
 
     private Vector2 _directionAtInstantiate;
+    private float _currentTime;
 
 	// Use this for initialization
 	void Start () {
+        _currentTime = 0.0f;
+        if(_lifeTime == 0)
+        {
+            _lifeTime = 5.0f;
+        }
         _directionAtInstantiate = GetDirectionByKey();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        _currentTime += Time.deltaTime;
+
+        if(_currentTime > _lifeTime)
+        {
+            this.gameObject.SetActive(false);
+            Destroy(this);
+            return;
+        }
+
         GameObject virus = GameObject.FindWithTag("Virus");
 		transform.Translate(_directionAtInstantiate * Time.deltaTime * _movementSpeed);
 		/*
