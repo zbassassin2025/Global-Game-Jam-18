@@ -23,22 +23,23 @@ public class VirusScript : MonoBehaviour
     public int bloodCells = 1;
 
     void OnTriggerEnter(Collider col)
-    {
+    {/*
         if(col.tag == "Player")
         {
             GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
-        }
+        }*/
     }
 
     void OnTriggerStay(Collider col) // chasing
     {
+		/*
         if (col.tag == "Player")
         {
             GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * virusSpeed;
         }
-
+*/
         if(col.tag == "Blood")
         {
             GetComponent<Rigidbody>().AddForce(col.transform.position - transform.position);

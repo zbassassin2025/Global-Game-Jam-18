@@ -22,6 +22,8 @@ public class virus_animation : MonoBehaviour {
 	public void DestroyVirus(){
 
 		Instantiate(virus, transform.position, Quaternion.identity).SetActive(true);
+
+		Instantiate(virus, transform.position, Quaternion.identity).SetActive(true);
 		Destroy(transform.parent.gameObject);
 	}
 

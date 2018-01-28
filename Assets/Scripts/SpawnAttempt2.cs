@@ -13,7 +13,7 @@ public class SpawnAttempt2 : MonoBehaviour
     bool isSpawning = false;
     public float minTime = 3.0f;
     public float maxTime = 5.0f;
-    public GameObject[] redCells = new GameObject[3]; // Array of prefabs
+    public GameObject[] redCells = new GameObject[2]; // Array of prefabs
     private int cellIndex = 0;
     private Rigidbody rb;
     public SpawnAttempt2 c;
@@ -31,6 +31,7 @@ public class SpawnAttempt2 : MonoBehaviour
         Debug.Log("Waiting for " + seconds + " seconds");
 
         yield return new WaitForSeconds(seconds);
+
         Instantiate(redCells[0].gameObject, transform.position, transform.rotation);
 
         isSpawning = false;
