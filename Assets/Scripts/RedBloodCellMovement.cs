@@ -10,8 +10,6 @@ public class RedBloodCellMovement : MonoBehaviour {
     Vector2 startingPosition;
     float randomX;
     float randomY;
-    //float largeX;
-    //float largeY;
     public float speed = 6f;
 
 
@@ -37,12 +35,8 @@ public class RedBloodCellMovement : MonoBehaviour {
     // Changes angle by random angle from list
     {
         int index = Mathf.FloorToInt(Random.Range(0, angles.Length));
-        Debug.Log(index);
-        //startingPosition.Set(Mathf.Cos(angles[index]), Mathf.Sin(angles[index]));
-        //transform.rotation = Quaternion.Euler(Mathf.Cos(angles[index]), Mathf.Sin(angles[index]), 0);
         redCell.AddForce(Vector2.zero);
         redCell.rotation = Quaternion.Euler(Mathf.Cos(angles[index]), Mathf.Sin(angles[index]), 0);
-        //startingPosition.Set(randomX*Mathf.Cos(angles[index]), randomY*Mathf.Sin(angles[index]));
     }
 
     // Use this for initialization
@@ -60,7 +54,6 @@ public class RedBloodCellMovement : MonoBehaviour {
         if (Time.frameCount % 120 == 0)
         {
             LargeMovement();
-            Debug.Log(startingPosition);
         }
         redCell.AddForce(startingPosition * speed);
         
