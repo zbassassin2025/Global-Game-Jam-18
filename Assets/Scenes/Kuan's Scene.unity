@@ -256,71 +256,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &266093917
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4490801904253598, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490801904253598, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490801904253598, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490801904253598, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490801904253598, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490801904253598, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490801904253598, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490801904253598, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114522282552614448, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
-        type: 2}
-      propertyPath: virus
-      value: 
-      objectReference: {fileID: 1145136535468374, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
-        type: 2}
-    - target: {fileID: 1145136535468374, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_Name
-      value: Virus_Inactive
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145136535468374, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145136535468374, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-      propertyPath: m_TagString
-      value: Virus
-      objectReference: {fileID: 0}
-    - target: {fileID: 114636969342758024, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
-        type: 2}
-      propertyPath: virusSpeed
-      value: 0.8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &289930362
 Prefab:
   m_ObjectHideFlags: 0
@@ -470,7 +405,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4335596468153044, guid: 5697e03ef8a154b358752b4bcb0cedb3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5697e03ef8a154b358752b4bcb0cedb3, type: 2}
@@ -550,7 +485,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 490955770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -20}
+  m_LocalPosition: {x: 0, y: 1, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -568,12 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  distance: -20
---- !u!1 &643927632 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1145136535468374, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
-    type: 2}
-  m_PrefabInternal: {fileID: 266093917}
+  distance: -50
 --- !u!1 &1038092253
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +708,7 @@ Prefab:
     - target: {fileID: 224502284405601542, guid: 76e8da03ca297614da827a6690c12440,
         type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224502284405601542, guid: 76e8da03ca297614da827a6690c12440,
         type: 2}
@@ -1139,7 +1069,7 @@ Prefab:
         type: 2}
       propertyPath: virus
       value: 
-      objectReference: {fileID: 643927632}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
   m_IsPrefabParent: 0
