@@ -260,7 +260,7 @@ Prefab:
         type: 2}
       propertyPath: _antibodyPrefab
       value: 
-      objectReference: {fileID: 1367684207488432, guid: ef8a592d0ad75474ea85e9d4868eb1a9,
+      objectReference: {fileID: 1367684207488432, guid: bc906905930050b429151c235af15783,
         type: 2}
     - target: {fileID: 114991482699327678, guid: 0df0f04f4b9444adeb187858136c9ca8,
         type: 2}
