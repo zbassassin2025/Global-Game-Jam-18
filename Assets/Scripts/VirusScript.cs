@@ -49,10 +49,25 @@ public class VirusScript : MonoBehaviour
     void OnCollisionEnter(Collision col) // destroy
     {
         if (col.transform.tag == "Blood")
-        {
-			//anim.Play("BateriophageInfection");
+		{
+			Destroy(col.gameObject);
 			anim.SetTrigger("bacteriophageInfection");
-            Destroy(col.gameObject);
+			//virus_animation();
+			//Destroy(gameObject);
+
         }
     }
+
+	IEnumerator virus_animation(){
+
+		//anim.Play("BateriophageInfection");
+		//float delay = 10f;
+		anim.SetTrigger("bacteriophageInfection");
+		//Debug.Log("time: " + anim.GetCurrentAnimatorStateInfo(0).length + delay); 
+		//Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length + delay); 
+	
+		yield return null;
+	}
+
+
 }
