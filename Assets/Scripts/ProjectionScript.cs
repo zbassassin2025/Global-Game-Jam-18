@@ -19,7 +19,8 @@ public class ProjectionScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GameObject virus = GameObject.FindWithTag("Virus");
-
+		transform.Translate(_directionAtInstantiate * Time.deltaTime * _movementSpeed);
+		/*
         if(virus == null)
         {
             transform.Translate(_directionAtInstantiate * Time.deltaTime * _movementSpeed);
@@ -38,14 +39,15 @@ public class ProjectionScript : MonoBehaviour {
             }
 
         }
-
+		*/
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collided against: " + collision.gameObject.name);
-        if(collision.collider.tag == "Virus")
+        if(collision.transform.tag == "Virus")
         {
+			Debug.Log("Collide");
             //Kill virus, destroy projectile
             collision.gameObject.SetActive(false);
 
