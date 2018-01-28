@@ -61,24 +61,55 @@ public class ProjectionScript : MonoBehaviour {
 
     private Vector2 GetDirectionByKey()
     {
-       if(Input.GetAxisRaw("Horizontal") < 0.0f)
+        //Up-Left
+        if (Input.GetAxisRaw("Vertical") > 0.0f && Input.GetAxisRaw("Horizontal") < 0.0f)
+        {
+            return Vector2.up + Vector2.left;
+        }
+
+        //Up-Right
+        if (Input.GetAxisRaw("Vertical") > 0.0f && Input.GetAxisRaw("Horizontal") > 0.0f)
+        {
+            return Vector2.up + Vector2.right;
+        }
+
+        //Down-Right
+        if (Input.GetAxisRaw("Vertical") < 0.0f && Input.GetAxisRaw("Horizontal") > 0.0f)
+        {
+            return Vector2.down + Vector2.right;
+        }
+
+        //Down-Left
+        if (Input.GetAxisRaw("Vertical") < 0.0f && Input.GetAxisRaw("Horizontal") < 0.0f)
+        {
+            return Vector2.down + Vector2.left;
+        }
+
+        //Left
+        if (Input.GetAxisRaw("Horizontal") < 0.0f)
         {
             return Vector2.left;
         }
+
+        //Right
         if (Input.GetAxisRaw("Horizontal") > 0.0f)
         {
             return Vector2.right;
         }
+
+        //Down
         if (Input.GetAxisRaw("Vertical") < 0.0f)
         {
             return Vector2.down;
         }
-        if (Input.GetAxisRaw("Horizontal") > 0.0f)
+
+        //Up
+        if (Input.GetAxisRaw("Vertical") > 0.0f)
         {
             return Vector2.up;
         }
 
-        return Vector2.up;
+        return new Vector2(0,0);
     }
 
     private void DestroyAntiBody()
