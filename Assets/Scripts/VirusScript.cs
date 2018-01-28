@@ -12,6 +12,13 @@ public class VirusScript : MonoBehaviour
 
     public GameObject virus;
     public GameObject player;
+	public Animator anim;
+
+	void Start(){
+		anim = GetComponentInChildren<Animator>();
+
+	}
+
 
     public int bloodCells = 1;
 
@@ -43,6 +50,8 @@ public class VirusScript : MonoBehaviour
     {
         if (col.transform.tag == "Blood")
         {
+			//anim.Play("BateriophageInfection");
+			anim.SetTrigger("bacteriophageInfection");
             Destroy(col.gameObject);
         }
     }
