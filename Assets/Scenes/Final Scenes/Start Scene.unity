@@ -681,7 +681,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 804753451}
-  - component: {fileID: 804753450}
   - component: {fileID: 804753452}
   m_Layer: 0
   m_Name: AudioPlayer
@@ -690,17 +689,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &804753450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 804753449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b390abd3a107548b09970eda1af5c820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &804753451
 Transform:
   m_ObjectHideFlags: 0
@@ -727,7 +715,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1212,7 +1200,7 @@ Animator:
   m_GameObject: {fileID: 1091194724}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 26a246f5365e57946a5de989924a42a0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 404c921fe8e3d8048837ad12ac3d8a5f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -55,7 +55,7 @@ MonoBehaviour:
   spawn_radius: 5
   spawnXpos: 0
   spawnYpos: 0
-  maxSpawnX: 5
-  maxSpawnY: 5
-  minSpawnX: -5
-  minSpawnY: -5
+  maxSpawnX: 7
+  maxSpawnY: 7
+  minSpawnX: -7
+  minSpawnY: -7
