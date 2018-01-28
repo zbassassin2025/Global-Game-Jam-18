@@ -2,53 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnBloodCells : MonoBehaviour {
+/*
+ * Script Programmer: Zac Bogner
+ */
+
+public class SpawnBloodCells : MonoBehaviour
+{
     public GameObject redCell;
     public float spawnTime = 0f;
+    public int spawnCount = 0;
 
-	void Start ()
+    void Start ()
     {
         spawnTime = 0;
+        spawnCount = 10;
         StartCoroutine("SpawnTimer");
     }
 
     private void Update()
     {
         spawnTime += Time.time;
-    }
 
-    /*void Update()
-    {
-        Debug.Log(spawnTime);
-        spawnTime += Time.time;
-
-        if (spawnTime >= 3)
+        while(redCell != null)
         {
-            Spawn();
+            spawnCount += 1;
+            StartCoroutine(SpawnTimer());
+            if(spawnCount >= 10)
+            {
+                break;
+            }
+            else
+            {
+                StopCoroutine(SpawnTimer());
+            }
         }
-        else
-        {
-            return;
-        }
-
     }
-    */
-
 
     private IEnumerator SpawnTimer()
     {
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(3.0f);
         Debug.Log(spawnTime);
 
         if (spawnTime >= 3)
         {
-            yield return new WaitForSeconds(10.0f);
+            yield return new WaitForSeconds(5.0f);
             StartCoroutine("Spawn");
             yield return new WaitForSeconds(5.0f);
         }
     }
 
-    // Update is called once per frame
    private IEnumerator Spawn()
     {
         StopCoroutine("Spawn");
