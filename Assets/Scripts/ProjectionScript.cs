@@ -67,6 +67,9 @@ public class ProjectionScript : MonoBehaviour {
             //Kill virus, destroy projectile
             collision.gameObject.SetActive(false);
 
+			// new Virus destroy function
+			//collision.gameObject.GetComponent<VirusScript>().DestroyUponAntibodyContact();
+
             // JA: Contract : Once Virus has a DestroyUponContact function, replace
             // this with the Virus's Destory function
             Destroy(collision.gameObject, _destroyTime);
