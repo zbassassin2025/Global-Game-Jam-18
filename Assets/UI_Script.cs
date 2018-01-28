@@ -22,6 +22,7 @@ public class UI_Script : MonoBehaviour {
 	private float cooldown;
 	private float cooldowntime = 1f;
 	private bool start = true; 
+	public bool debugmode = false;
 
 	void Awake(){
 		Time.timeScale = 1;
@@ -53,6 +54,7 @@ public class UI_Script : MonoBehaviour {
 
 			blood_count = 0;
 			Time.timeScale = 0;
+
 			gameover_canvas.SetActive(true);
 
 		}
