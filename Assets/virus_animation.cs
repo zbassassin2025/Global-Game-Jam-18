@@ -20,15 +20,15 @@ public class virus_animation : MonoBehaviour {
 	}
 
 	public void DestroyVirus(){
-		GetComponentInParent<VirusScript>().isNotOnBlood = false;
-		Instantiate(virus, transform.position, Quaternion.identity).SetActive(true);
-		Instantiate(virus, transform.position, Quaternion.identity).SetActive(true);
-		Destroy(transform.parent.gameObject);
-	}
+		//GetComponentInParent<VirusScript>().isNotOnBlood = false;
+		GameObject n_virus = Instantiate(virus, transform.position, Quaternion.identity) as GameObject;
+		GameObject n_virus2 = Instantiate(virus, transform.position, Quaternion.identity) as GameObject;
+		n_virus.SetActive(true);
+		n_virus.GetComponentInParent<VirusScript>().isNotOnBlood = false;
+		n_virus2.SetActive(true);
+		n_virus2.GetComponentInParent<VirusScript>().isNotOnBlood = false;
 
-	public void DestroyVirusForGood () 
-	{
-		Destroy (transform.parent.gameObject);
+		Destroy(transform.parent.gameObject);
 	}
 
 

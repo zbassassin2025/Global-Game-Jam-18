@@ -29,15 +29,20 @@ public class UI_Script : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		virus = GameObject.FindGameObjectsWithTag("Virus");
-		blood = GameObject.FindGameObjectsWithTag("Blood");
-		blood_count = blood.Length;
-		virus_count = virus.Length;
+		//virus = GameObject.FindGameObjectsWithTag("Virus");
+		//blood = GameObject.FindGameObjectsWithTag("Blood");
+		//blood_count = blood.Length;
+		//virus_count = virus.Length;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		virus = GameObject.FindGameObjectsWithTag("Virus");
+		blood = GameObject.FindGameObjectsWithTag("Blood");
+		blood_count = blood.Length;
+		virus_count = virus.Length;
+
 		if(Input.GetKeyDown(KeyCode.Escape)){
 			if(Time.timeScale == 1){
 				Time.timeScale = 0;
