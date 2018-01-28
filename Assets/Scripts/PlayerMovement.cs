@@ -88,6 +88,8 @@ public class PlayerMovement : MonoBehaviour {
         
         if (Input.GetKeyDown("space") && ContainsButtonPresses())
         {
+            this.GetComponent<AudioSource>().Play();
+
             //Shoot antibodies
             var direction = (Vector3)ProjectionScript.GetDirectionByKey() * 2;
 
@@ -101,6 +103,7 @@ public class PlayerMovement : MonoBehaviour {
             {
                 Debug.Log("deleting antibody...");
                 var removedAntibody = _antibodyQueue.Dequeue();
+                removedAntibody.SetActive(false);
                 Destroy(removedAntibody);
             }
 
