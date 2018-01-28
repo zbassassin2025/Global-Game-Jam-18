@@ -79,8 +79,10 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKeyDown("space") && ContainsButtonPresses())
         {
             //Shoot antibodies
-            var antibody = Instantiate(_antibodyPrefab, transform.position, transform.rotation) as GameObject;
-            antibody.AddComponent<BoxCollider>().isTrigger = true;
+            var direction = (Vector3)ProjectionScript.GetDirectionByKey() * 2;
+
+            var antibody = Instantiate(_antibodyPrefab, transform.position + direction, Quaternion.identity) as GameObject;
+            antibody.AddComponent<BoxCollider>();
 
 
             _antibodyQueue.Enqueue(antibody);
