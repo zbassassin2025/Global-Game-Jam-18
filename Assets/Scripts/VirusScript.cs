@@ -109,7 +109,6 @@ public class VirusScript : MonoBehaviour
 			isNotOnBlood = true;
 			Destroy(col.gameObject);
 			anim.SetTrigger("bacteriophageInfection");
-			Destroy (this.gameObject);
 			//virus_animation();
 			//Destroy(gameObject);
 

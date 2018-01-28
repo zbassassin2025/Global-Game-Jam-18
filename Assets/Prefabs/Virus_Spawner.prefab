@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa0dbfb588d44220be21ba40245cf66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1302158265001166, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
+  prefab: {fileID: 1145136535468374, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
   spawn_radius: 5
   spawnXpos: 0
   spawnYpos: 0
