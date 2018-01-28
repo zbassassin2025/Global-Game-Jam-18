@@ -7,6 +7,8 @@ using UnityEngine;
 public class SpawnAttempt2 : MonoBehaviour
 {
     // A simple spawner class 
+    public int maxNumberCells = 100;
+    public int cellCount = 0;
 
     bool isSpawning = false;
     public float minTime = 3.0f;
@@ -15,6 +17,7 @@ public class SpawnAttempt2 : MonoBehaviour
     private int cellIndex = 0;
     private Rigidbody rb;
     public SpawnAttempt2 c;
+  
 
     void Awake()
     {
@@ -54,29 +57,36 @@ public class SpawnAttempt2 : MonoBehaviour
 
     void Update()
     {
-        if (!isSpawning)
+        if (!(cellCount >= maxNumberCells))
         {
-            isSpawning = true;
-            int cellIndex = Random.Range(0, redCells.Length);
-            StartCoroutine(Cluster());
-            StartCoroutine(SpawnObject(cellIndex, Random.Range(minTime, maxTime)));
-        }
-        else if (maxTime > 10)
-        {
-            isSpawning = false;
-            redCells[0].SetActive(false);
-            return;
-        }
 
-        if (redCells.Length > 10)
-        {
-            isSpawning = false;
-            maxTime = 0;
-
-            if (maxTime > 10)
+            if (!isSpawning)
             {
-                StartCoroutine(SpawnObject(cellIndex, Random.RandomRange(5, 20)));
+                isSpawning = true;
+                int cellIndex = Random.Range(0, redCells.Length);
+                StartCoroutine(Cluster());
+                Debug.Log("Adding " + cellCount);
+                cellCount += 3;
+                StartCoroutine(SpawnObject(cellIndex, Random.Range(minTime, maxTime)));
+            }
+            else if (maxTime > 10)
+            {
+                isSpawning = false;
+                redCells[0].SetActive(false);
+                return;
+            }
+
+            if (redCells.Length > 10)
+            {
+                isSpawning = false;
+                maxTime = 0;
+
+                if (maxTime > 10)
+                {
+                    StartCoroutine(SpawnObject(cellIndex, Random.RandomRange(5, 20)));
+                }
             }
         }
+        Debug.Log("CellsNum " + cellCount);
     }
 }
