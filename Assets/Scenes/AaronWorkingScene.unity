@@ -338,6 +338,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114991482699327678, guid: 0df0f04f4b9444adeb187858136c9ca8,
+        type: 2}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0df0f04f4b9444adeb187858136c9ca8, type: 2}
   m_IsPrefabParent: 0
@@ -645,6 +650,10 @@ Prefab:
       propertyPath: spawners.Array.data[1]
       value: 
       objectReference: {fileID: 1609839650}
+    - target: {fileID: 1762316226347208, guid: 6b55b5b7aaa1144d4b85f79e22422854, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b55b5b7aaa1144d4b85f79e22422854, type: 2}
   m_IsPrefabParent: 0
@@ -695,6 +704,10 @@ Prefab:
     - target: {fileID: 1512195059183138, guid: 9bacd1c0581ce4041b854e2bbd1a4d32, type: 2}
       propertyPath: m_Name
       value: Blood_Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512195059183138, guid: 9bacd1c0581ce4041b854e2bbd1a4d32, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bacd1c0581ce4041b854e2bbd1a4d32, type: 2}
@@ -837,6 +850,10 @@ Prefab:
         type: 2}
       propertyPath: number_to_spawn
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972880707315178, guid: 0af749c4511dd47a7b6820a585708455, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0af749c4511dd47a7b6820a585708455, type: 2}

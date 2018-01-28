@@ -109,22 +109,12 @@ public class VirusScript : MonoBehaviour
 			isNotOnBlood = true;
 			Destroy(col.gameObject);
 			anim.SetTrigger("bacteriophageInfection");
+			Destroy (this.gameObject);
 			//virus_animation();
 			//Destroy(gameObject);
 
         }
     }
-
-	IEnumerator virus_animation(){
-
-		//anim.Play("BateriophageInfection");
-		//float delay = 10f;
-		anim.SetTrigger("bacteriophageInfection");
-		//Debug.Log("time: " + anim.GetCurrentAnimatorStateInfo(0).length + delay); 
-		//Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length + delay); 
-	
-		yield return null;
-	}
 
 
 }
