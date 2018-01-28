@@ -1055,11 +1055,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114522282552614448, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
-        type: 2}
-      propertyPath: virus
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00364836c9c7db84a8b7a89bcf4ced5d, type: 2}
   m_IsPrefabParent: 0
