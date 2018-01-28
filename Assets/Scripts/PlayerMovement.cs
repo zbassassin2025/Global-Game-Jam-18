@@ -70,7 +70,8 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 
-		rb.AddForce(movement * speed);
+		//rb.AddForce(movement * speed);
+		rb.MovePosition(movement * speed * Time.deltaTime + transform.position);
 	}
 
     private void ReleaseAntiBody()

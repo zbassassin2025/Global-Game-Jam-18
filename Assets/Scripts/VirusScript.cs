@@ -98,6 +98,10 @@ public class VirusScript : MonoBehaviour
         }
     }
 
+	public void DestroyByAntibodyContact () {
+		anim.SetTrigger ("bacteriophageDestroy");
+	}
+	
     void OnCollisionEnter(Collision col) // destroy
     {
         if (col.transform.tag == "Blood" && !isNotOnBlood)
