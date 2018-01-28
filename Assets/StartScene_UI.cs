@@ -45,9 +45,5 @@ public class StartScene_UI : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-	public void End(){
-
-		Application.Quit();
-	}
 
 }
