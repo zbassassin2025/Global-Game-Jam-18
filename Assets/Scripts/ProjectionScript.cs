@@ -9,9 +9,11 @@ public class ProjectionScript : MonoBehaviour {
     public float _virusDistance;
     public float _destroyTime;
 
+    private Vector2 _directionAtInstantiate;
+
 	// Use this for initialization
 	void Start () {
-		
+        _directionAtInstantiate = GetDirectionByKey();
 	}
 	
 	// Update is called once per frame
@@ -20,7 +22,7 @@ public class ProjectionScript : MonoBehaviour {
 
         if(virus == null)
         {
-            transform.Translate(Vector2.up * Time.deltaTime * _movementSpeed);
+            transform.Translate(_directionAtInstantiate * Time.deltaTime * _movementSpeed);
         }
         else
         {
@@ -52,9 +54,67 @@ public class ProjectionScript : MonoBehaviour {
             Destroy(collision.gameObject, _destroyTime);
 
             // JA: Contract: Implement a function that destroys the object with animation
-            Destroy(this, _destroyTime);
-            this.gameObject.SetActive(false);
+            DestroyAntiBody();
 
         }
+    }
+
+    private Vector2 GetDirectionByKey()
+    {
+        //Up-Left
+        if (Input.GetAxisRaw("Vertical") > 0.0f && Input.GetAxisRaw("Horizontal") < 0.0f)
+        {
+            return Vector2.up + Vector2.left;
+        }
+
+        //Up-Right
+        if (Input.GetAxisRaw("Vertical") > 0.0f && Input.GetAxisRaw("Horizontal") > 0.0f)
+        {
+            return Vector2.up + Vector2.right;
+        }
+
+        //Down-Right
+        if (Input.GetAxisRaw("Vertical") < 0.0f && Input.GetAxisRaw("Horizontal") > 0.0f)
+        {
+            return Vector2.down + Vector2.right;
+        }
+
+        //Down-Left
+        if (Input.GetAxisRaw("Vertical") < 0.0f && Input.GetAxisRaw("Horizontal") < 0.0f)
+        {
+            return Vector2.down + Vector2.left;
+        }
+
+        //Left
+        if (Input.GetAxisRaw("Horizontal") < 0.0f)
+        {
+            return Vector2.left;
+        }
+
+        //Right
+        if (Input.GetAxisRaw("Horizontal") > 0.0f)
+        {
+            return Vector2.right;
+        }
+
+        //Down
+        if (Input.GetAxisRaw("Vertical") < 0.0f)
+        {
+            return Vector2.down;
+        }
+
+        //Up
+        if (Input.GetAxisRaw("Vertical") > 0.0f)
+        {
+            return Vector2.up;
+        }
+
+        return new Vector2(0,0);
+    }
+
+    private void DestroyAntiBody()
+    {
+        Destroy(this, _destroyTime);
+        this.gameObject.SetActive(false);
     }
 }

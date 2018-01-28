@@ -26,8 +26,8 @@ public class UI_Script : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		blood = GameObject.FindGameObjectsWithTag("Virus");
-		virus = GameObject.FindGameObjectsWithTag("Blood");
+		virus = GameObject.FindGameObjectsWithTag("Virus");
+		blood = GameObject.FindGameObjectsWithTag("Blood");
 		blood_count = blood.Length;
 		virus_count = virus.Length;
 
