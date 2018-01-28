@@ -23,6 +23,9 @@ public class SpawnManager : MonoBehaviour {
 				spawners[i].GetComponent<spawningScript>().SpawnPrefab();
 				//call spawner spawn function;
 				spawned++;
+				if(spawned == number_to_spawn)
+				{break;}
+
 			}
 		}
 	}
