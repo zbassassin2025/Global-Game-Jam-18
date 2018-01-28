@@ -28,11 +28,11 @@ public class SpawnAttempt2 : MonoBehaviour
 
     IEnumerator SpawnObject(int index, float seconds)
     {
-        Debug.Log("Waiting for " + seconds + " seconds");
+        //Debug.Log("Waiting for " + seconds + " seconds");
 
         yield return new WaitForSeconds(seconds);
 
-        Instantiate(redCells[0].gameObject, transform.position, transform.rotation);
+        //Instantiate(redCells[0].gameObject, transform.position, transform.rotation);
 
         isSpawning = false;
     }
@@ -48,9 +48,9 @@ public class SpawnAttempt2 : MonoBehaviour
                     continue;
                 }
 
+                Instantiate(redCells[0].gameObject, transform.position, transform.rotation);
                 Instantiate(redCells[1].gameObject, transform.position, transform.rotation);
                 Instantiate(redCells[2].gameObject, transform.position, transform.rotation);
-                Instantiate(redCells[3].gameObject, transform.position, transform.rotation);
             }
             yield return null;
         }
@@ -66,7 +66,7 @@ public class SpawnAttempt2 : MonoBehaviour
                 isSpawning = true;
                 int cellIndex = Random.Range(0, redCells.Length);
                 StartCoroutine(Cluster());
-                Debug.Log("Adding " + cellCount);
+                //Debug.Log("Adding " + cellCount);
                 cellCount += 3;
                 StartCoroutine(SpawnObject(cellIndex, Random.Range(minTime, maxTime)));
             }
@@ -88,6 +88,6 @@ public class SpawnAttempt2 : MonoBehaviour
                 }
             }
         }
-        Debug.Log("CellsNum " + cellCount);
+        //Debug.Log("CellsNum " + cellCount);
     }
 }
