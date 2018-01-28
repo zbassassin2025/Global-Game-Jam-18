@@ -37,8 +37,6 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		rb.velocity = new Vector3 (0.0f, 0.0f, 0.0f);
-
 		float moveHorizontal = Input.GetAxis("Horizontal")/2; 
 		float moveVertical = Input.GetAxis("Vertical")/2;
         //Debug.Log("v: " + moveVertical + " h: " + moveHorizontal);
@@ -95,7 +93,6 @@ public class PlayerMovement : MonoBehaviour {
 
             var antibody = Instantiate(_antibodyPrefab, transform.position + direction, Quaternion.identity) as GameObject;
             antibody.AddComponent<BoxCollider>();
-
 
 
             _antibodyQueue.Enqueue(antibody);
