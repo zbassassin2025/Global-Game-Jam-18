@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44659364, g: 0.4964301, b: 0.5748256, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -122,7 +121,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -15.1
+      value: -26.19
       objectReference: {fileID: 0}
     - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -245,8 +244,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 188981630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 310, y: 174.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -265,7 +264,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4833145523958014, guid: 0df0f04f4b9444adeb187858136c9ca8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 21.7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4833145523958014, guid: 0df0f04f4b9444adeb187858136c9ca8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -307,7 +306,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.6
+      value: -25.72
       objectReference: {fileID: 0}
     - target: {fileID: 4443230826718320, guid: aeb4f5c104e1420498bd0ec883ab419f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -651,8 +650,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674388306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 310, y: 174.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1996680430}
   m_Father: {fileID: 0}
@@ -796,12 +795,12 @@ Prefab:
     - target: {fileID: 224789641330713184, guid: 894af6bfc38f141238f2eb1c555ea11a,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 224789641330713184, guid: 894af6bfc38f141238f2eb1c555ea11a,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 174.5
       objectReference: {fileID: 0}
     - target: {fileID: 224789641330713184, guid: 894af6bfc38f141238f2eb1c555ea11a,
         type: 2}
@@ -886,6 +885,16 @@ Prefab:
     - target: {fileID: 1032910837265078, guid: 894af6bfc38f141238f2eb1c555ea11a, type: 2}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401065036704826, guid: 894af6bfc38f141238f2eb1c555ea11a,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 650
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401065036704826, guid: 894af6bfc38f141238f2eb1c555ea11a,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 365.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 894af6bfc38f141238f2eb1c555ea11a, type: 2}
@@ -976,7 +985,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996680429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.000061035156, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1674388310}

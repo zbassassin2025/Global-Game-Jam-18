@@ -26,5 +26,10 @@ public class virus_animation : MonoBehaviour {
 		Destroy(transform.parent.gameObject);
 	}
 
+	public void DestroyVirusForGood () 
+	{
+		Destroy (transform.parent.gameObject);
+	}
+
 
 }
