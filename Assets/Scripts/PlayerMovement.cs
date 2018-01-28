@@ -37,41 +37,50 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		float moveHorizontal = Input.GetAxis("Horizontal"); 
-		float moveVertical = Input.GetAxis("Vertical");
-		//Debug.Log("v: " + moveVertical + " h: " + moveHorizontal);
+		float moveHorizontal = Input.GetAxis("Horizontal")/2; 
+		float moveVertical = Input.GetAxis("Vertical")/2;
+        //Debug.Log("v: " + moveVertical + " h: " + moveHorizontal);
+
+        this.transform.position += new Vector3(moveHorizontal, moveVertical);
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
 
-		Vector3 pposition = transform.position; 
+        Vector3 pposition = transform.position;
 
-		if(active_position_check){
-		if(pposition.x > max_x){
+        if (active_position_check)
+        {
+            if (pposition.x > max_x)
+            {
+                Debug.Log("beyond max x");
+                transform.position = new Vector2(max_x, pposition.y);
+                movement = Vector2.zero;
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
+            if (pposition.x < min_x)
+            {
+                Debug.Log("beyond min x");
+                transform.position = new Vector2(min_x, pposition.y);
+                movement = Vector2.zero;
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
+            if (pposition.y > max_y)
+            {
+                Debug.Log("beyond max y");
+                transform.position = new Vector2(pposition.y, max_y);
+                movement = Vector2.zero;
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
+            if (pposition.y < min_y)
+            {
+                Debug.Log("beyond min y");
+                transform.position = new Vector2(pposition.y, min_y);
+                movement = Vector2.zero;
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
+        }
 
-			transform.position = new Vector2(max_x, pposition.y);
-			movement = Vector2.zero;
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
-		}
-		if(pposition.x < min_x){
-			transform.position = new Vector2(min_x, pposition.y);
-			movement = Vector2.zero;
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
-		}
-		if(pposition.y > max_y){
-
-			transform.position = new Vector2(pposition.y, max_y);
-			movement = Vector2.zero;
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
-		}
-		if(pposition.y < min_y){
-			transform.position = new Vector2(pposition.y, min_y);
-			movement = Vector2.zero;
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
-			}
-		}
-
-		//rb.AddForce(movement * speed);
-		rb.MovePosition(movement * speed * Time.deltaTime + transform.position);
+        //rb.AddForce(movement * speed);
+        rb.MovePosition(movement * speed * Time.deltaTime + transform.position);
 	}
 
     private void ReleaseAntiBody()
