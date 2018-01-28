@@ -122,5 +122,9 @@ public class VirusScript : MonoBehaviour
 		yield return null;
 	}
 
+	public void DestroyByAntibodyContact () {
+		anim.SetTrigger ("bacteriophageDestroy");
+	}
+
 
 }
