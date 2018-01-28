@@ -94,6 +94,7 @@ public class PlayerMovement : MonoBehaviour {
 
             var antibody = Instantiate(_antibodyPrefab, transform.position + direction, Quaternion.identity) as GameObject;
             antibody.AddComponent<BoxCollider>();
+			antibody.GetComponent<Rigidbody>().velocity = rb.velocity;
 
 
             _antibodyQueue.Enqueue(antibody);
