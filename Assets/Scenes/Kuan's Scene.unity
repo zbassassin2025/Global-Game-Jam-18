@@ -198,6 +198,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 114705208659651142, guid: 71895ba8db3314d499c1727e904043ab,
+        type: 2}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1145136535468374, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71895ba8db3314d499c1727e904043ab, type: 2}
   m_IsPrefabParent: 0
@@ -667,14 +673,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD
     - target: {fileID: 114054220095957020, guid: 6b55b5b7aaa1144d4b85f79e22422854,
         type: 2}
       propertyPath: spawners.Array.size
       value: 5
       objectReference: {fileID: 0}
-=======
->>>>>>> 925b98c005ac39bd6d49690dec297412c8375b1b
     - target: {fileID: 4520272293015610, guid: 6b55b5b7aaa1144d4b85f79e22422854, type: 2}
       propertyPath: m_LocalPosition.x
       value: 735.8388
@@ -714,14 +717,11 @@ Prefab:
       objectReference: {fileID: 1492114618}
     - target: {fileID: 114054220095957020, guid: 6b55b5b7aaa1144d4b85f79e22422854,
         type: 2}
-<<<<<<< HEAD
       propertyPath: number_to_spawn
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114054220095957020, guid: 6b55b5b7aaa1144d4b85f79e22422854,
         type: 2}
-=======
->>>>>>> 925b98c005ac39bd6d49690dec297412c8375b1b
       propertyPath: spawners.Array.data[1]
       value: 
       objectReference: {fileID: 1609839650}
@@ -6145,6 +6145,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114705208659651142, guid: 71895ba8db3314d499c1727e904043ab,
+        type: 2}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1145136535468374, guid: 00364836c9c7db84a8b7a89bcf4ced5d,
+        type: 2}
     - target: {fileID: 1916169705179122, guid: 71895ba8db3314d499c1727e904043ab, type: 2}
       propertyPath: m_Name
       value: Virus_Spawner (1)
