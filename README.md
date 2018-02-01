@@ -1,3 +1,4 @@
 # Global-Game-Jam-18
-Pathogen Defense
-You are the red blood cell and you are defending the red blood cells from the pathogens
+Phage Phighter
+You are the white blood cell and you are defending the red blood cells from the phages.
+globalgamejam.org/2018/games/phage-phighter
